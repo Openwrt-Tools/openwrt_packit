@@ -506,10 +506,6 @@ fi
 echo "Modify the configuration file ... "
 rm -f "./etc/rc.local.orig" "./etc/first_run.sh" "./etc/part_size"
 rm -rf "./opt/docker" && ln -sf "/mnt/${DISK_NAME}${PART_PRESTR}4/docker" "./opt/docker"
-rm -f ./etc/bench.log
-cat >>./etc/crontabs/root <<EOF
-37 5 * * * /etc/coremark.sh
-EOF
 
 sss=$(date +%s)
 ddd=$((sss / 86400))

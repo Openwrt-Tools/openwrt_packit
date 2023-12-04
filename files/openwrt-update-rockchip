@@ -658,10 +658,6 @@ if [ $BR_FLAG -eq 1 ]; then
     echo
 fi
 
-cat >>./etc/crontabs/root <<EOF
-17 3 * * * /etc/coremark.sh
-EOF
-
 sed -e 's/ttyAMA0/ttyS2/' -i ./etc/inittab
 [ "${SOC}" != "h28k" ] && [ "${SOC}" != "ht2" ] && sed -e 's/ttyS0/tty1/' -i ./etc/inittab
 sss=$(date +%s)

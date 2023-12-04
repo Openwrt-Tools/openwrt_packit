@@ -497,11 +497,6 @@ if [ $BR_FLAG -eq 1 ]; then
     echo
 fi
 
-rm -f ./etc/bench.log
-cat >>./etc/crontabs/root <<EOF
-17 3 * * * /etc/coremark.sh
-EOF
-
 sed -e 's/ttyAMA0/ttyS0/' -i ./etc/inittab
 sss=$(date +%s)
 ddd=$((sss / 86400))
